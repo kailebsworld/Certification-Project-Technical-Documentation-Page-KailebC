@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berlin Nightlife API Documentation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav id="navbar">
+    <header>Berlin Nightlife API</header>
+    <a class="nav-link" href="#Introduction">Introduction</a>
+    <hr class="nav-divider">
+    <a class="nav-link" href="#Getting_Started">Getting Started</a>
+    <hr class="nav-divider">
+    <a class="nav-link" href="#Authentication">Authentication</a>
+    <hr class="nav-divider">
+    <a class="nav-link" href="#Club_Data_Structure">Club Data Structure</a>
+    <hr class="nav-divider">
+    <a class="nav-link" href="#Fetching_Club_Listings">Fetching Club Listings</a>
+    <hr class="nav-divider">
+    <a class="nav-link" href="#Iconic_Berlin_Clubs">Iconic Berlin Clubs</a>
+    <hr class="nav-divider">
+    <a class="nav-link" href="#Clubbing_Etiquette_in_Berlin">Clubbing Etiquette in Berlin</a>
+    <hr class="nav-divider">
+    <a class="nav-link" href="#Event_Booking_&_Guest_Lists">Event Booking & Guest Lists</a>
+    <hr class="nav-divider">
+    <a class="nav-link" href="#Average_Entry_Fees">Average Entry Fees</a>
+    <hr class="nav-divider">
+    <a class="nav-link" href="#Drink_Prices_in_Berlin_Clubs">Drink Prices in Berlin Clubs</a>
+    <hr class="nav-divider">
+    <a class="nav-link" href="#DJ_Lineups_&_Set_Times">DJ Lineups & Set Times</a>
+    <hr class="nav-divider">
+    <a class="nav-link" href="#Best_Times_to_Visit_Clubs">Best Times to Visit Clubs</a>
+    <hr class="nav-divider">
+    <a class="nav-link" href="#Transport_Options_After_Clubbing">Transport Options After Clubbing</a>
+    <hr class="nav-divider">
+    <a class="nav-link" href="#API_Rate_Limits_&_Error_Handling">API Rate Limits & Error Handling</a>
+  </nav>
+
+  <main id="main-doc">
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <p>The Berlin Nightlife API provides real-time data on the best clubs, underground parties, lineups, and ticketing in Berlin. Whether you're into techno, house, or experimental beats, this API helps you stay updated.</p>
+      <p>This API is designed for developers who want to integrate Berlin's vibrant nightlife into their applications.</p>
+    </section>
+
+    <section class="main-section" id="Getting_Started">
+      <header>Getting Started</header>
+      <p>To start using the API, register for an API key and make a request to retrieve club data.</p>
+      <p>You can register for an API key by visiting our developer portal and signing up for an account.</p>
+    </section>
+
+    <section class="main-section" id="Authentication">
+      <header>Authentication</header>
+      <p>All requests must include an authentication token.</p>
+      <p>This token ensures that only authorized users can access the API.</p>
+      <code>{
+        <br>
+        "Authorization": "Beaver YOUR_API_KEY"
+        <br>
+        }</code>
+    </section>
+
+    <section class="main-section" id="Club_Data_Structure">
+      <header>Club Data Structure</header>
+      <p>This structure includes details such as the club's name, location, music genres, entry fee, and opening hours.</p>
+      <p>Each club entry follows this JSON format:</p>
+      <code> {
+        <br>
+        "id": 301,
+        <br>
+        "name": "Berghain",
+        <br>
+        "location": "Am Witezener Bahnhof, 10243 Berlin",
+        <br>
+        "music_gemes": ["Techno", "Industrial"],
+        <br>
+        "entry_fee": "25 EUR",
+        <br>
+        "opening_hours": "Saturday 23:59 Monday 12:00"
+        <br>
+        }</code>
+    </section>
+
+    <section class="main-section" id="Fetching_Club_Listings">
+      <header>Fetching Club Listings</header>
+      <p>This request will return a list of clubs with their current status and details.</p>
+      <p>To get a list of clubs currently open, send a GET request:</p>
+      <code>[
+        <br>
+        {
+        <br>
+        "id": 302,
+        <br>
+        "name": "Sisyphos",
+        <br>
+        "music_gemes":
+        <br>["House", "Techno"],
+        <br>
+        "entry_fee": "20 EUR"
+        <br>
+        }
+        <br>
+        {
+        <br>
+        "id": 303,
+        <br>
+        "name": "Tresor",
+        <br>
+        "music_gemes":
+        <br>
+        ["Techno", "Industrial"],
+        <br>
+        "entry_fee": "15 EUR"
+        <br>
+        }
+        <br>
+        ]
+      </code>
+    </section>
+
+    <section class="main-section" id="Iconic_Berlin_Clubs">
+      <header>Iconic Berlin Clubs</header>
+      <p>These clubs are known for their unique atmospheres and music styles.</p>
+      <p>Berlin is home to some of the world's most legendary clubs:</p>
+      <br>
+      <ul>
+        <li>Berghain - The holy grail of techno, strict door policy</li>
+        <li>Sisyphos - Open-air and warehouse vibes</li>
+        <li>Tresor - Underground, industrial sound</li>
+        <li>Watergate - Overlooking the Spree with top-tier DJs</li>
+        <li>Renate - Wild, colorful, and unpredictable parties</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Clubbing_Etiquette_in_Berlin">
+      <header>Clubbing Etiquette in Berlin</header>
+      <p>Understanding the clubbing culture in Berlin is essential for a great experience.</p>
+      <br>
+      <ul>
+        <li>No Photos! Many clubs enforce a strict no-camera policy.</li>
+        <li>Dress Code Matters. Dark, minimal, and stylish works best.</li>
+        <li>Respect the Space. Berlin's clubs thrive on inclusivity.</li>
+        <li>Know the Door Policies. Some clubs are notoriously selective.</li>
+        <li>Stay Until Sunrise. The real magic happens in the early hours.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Event_Booking_&_Guest_Lists">
+      <header>Event Booking & Guest Lists</header>
+      <p>This request will help you book tickets or get on the guest list for events.</p>
+      <p>To get a list of clubs currently open, send a GET request:</p>
+      <code>{
+        <br>
+        "event_id": 9001,
+        <br>
+        "user_id": "techno_warrior_92",
+        <br>
+        "tickets": 2,
+        <br>
+        "payment_status": "pending"
+        <br>
+        }</code>
+    </section>
+
+    <section class="main-section" id="Average_Entry_Fees">
+      <header>Average Entry Fees</header>
+      <p>Here are the average entry fees for some of the most popular clubs in Berlin:</p>
+      <br>
+      <ul>
+        <li>Berghain: 25 EUR</li>
+        <li>Sisyphos: 20 EUR</li>
+        <li>Tresor: 15 EUR</li>
+        <li>Watergate: 15 EUR</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Drink_Prices_in_Berlin_Clubs">
+      <header>Drink Prices in Berlin Clubs</header>
+      <p>Drink prices in Berlin clubs are generally affordable. Here's a breakdown:</p>
+      <br>
+      <ul>
+        <li>Beer (0.5L): 4-6 EUR</li>
+        <li>Vodka Shot: 3-5 EUR</li>
+        <li>Cocktail: 8-12 EUR</li>
+        <li>Water (yes, you'll need it): 2-4 EUR</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="DJ_Lineups_&_Set_Times">
+      <header>DJ Lineups & Set Times</header>
+      <p>This request will return information about DJ lineups and set times.</p>
+      <p>To get a list of clubs currently open, send a GET request:</p>
+      <code>[
+        <br>
+        {
+        <br>
+        "dj": "Amelie Lens",
+        <br>
+        "club": "Berghain",
+        <br>
+        "time": "02:00"
+        <br>
+        }
+        <br>
+        {
+        "dj": "Ben Klock",
+        <br>
+        "club": "Tresor",
+        <br>
+        "time": "04:00"
+        <br>
+        }
+        <br>
+        ]
+      </code>
+    </section>
+
+    <section class="main-section" id="Best_Times_to_Visit_Clubs">
+      <header>Best Times to Visit Clubs</header>
+      <p>Berlin's nightlife is vibrant, but timing is everything. Here are the best times to visit:</p>
+      <br>
+      <ul>
+        <li>Friday Midnight - Saturday Morning: Best for late-night energy.</li>
+        <li>Saturday Night - Sunday Morning: Peak clubbing hours in Berlin.</li>
+        <li>Sunday Afternoon - Monday Morning: Hardcore partygoers only.</li>
+        <li>Weekdays: Some clubs host smaller but still amazing events.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Transport_Options_After_Clubbing">
+      <header>Transport Options After Clubbing</header>
+      <p>Getting home after a night out in Berlin is easy with these transport options:</p>
+      <br>
+      <ul>
+        <li>Night Buses (N-Series): Run every 30 minutes.</li>
+        <li>U-Bahn: Some lines operate 24/7 on weekends.</li>
+        <li>Ride-Sharing: Bolt, Uber, or FreeNow are available.</li>
+        <li>Walking: Many clubs are close to each other in Friedrichshain and Kreuzberg.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="API_Rate_Limits_&_Error_Handling">
+      <header>API Rate Limits & Error Handling</header>
+      <p>Our API has different rate limits based on your subscription plan:</p>
+      <br>
+      <ul>
+        <li>Free Plan: Allows up to 10 requests per minute and 1,000 requests per day.</li>
+        <li>Pro Plan: Supports 100 requests per minute and up to 10,000 requests per day.</li>
+        <li>Enterprise Plan: Offers 500 requests per minute with unlimited daily requests.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+
+</html>
